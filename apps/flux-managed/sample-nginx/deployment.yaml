@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-nginx
+  labels:
+    app: flux-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flux-demo
+  template:
+    metadata:
+      labels:
+        app: flux-demo
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-nginx
+spec:
+  selector:
+    app: flux-demo
+  ports:
+    - port: 80
+      targetPort: 80
