@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-fastapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-fastapi
+  template:
+    metadata:
+      labels:
+        app: sample-fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: tiangolo/uvicorn-gunicorn-fastapi:python3.11
+        ports:
+        - containerPort: 80
