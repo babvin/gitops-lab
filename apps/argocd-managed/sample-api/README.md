@@ -34,7 +34,7 @@ make run       # uvicorn --reload on :8000
 `.github/workflows/sample-api-ci.yml` (repo root -- GitHub Actions can't read
 workflows from subdirectories) lints, tests, and builds a Docker image on
 every PR touching this path; on push to `main` it also pushes to
-`ghcr.io/<owner>/sample-api:latest` and `:<sha>`.
+`ghcr.io/<owner>/sample-api:latest` and `:<sha>` for both amd64 and arm64 platforms.
 
 **What CI does *not* do yet:** write the new image tag back into
 `deploy/kustomization.yaml`. Right now that's a manual step:
