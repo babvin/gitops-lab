@@ -9,5 +9,5 @@ resources:
 #   kustomize edit set image ghcr.io/<GITHUB_OWNER>/sample-api=ghcr.io/<GITHUB_OWNER>/sample-api:<sha>
 # which keeps deployment.yaml itself untouched -- ArgoCD then syncs the new tag.
 images:
-  - name: ghcr.io/<GITHUB_OWNER>/sample-api
+  - name: ghcr.io/babvin/sample-api
     newTag: latest
