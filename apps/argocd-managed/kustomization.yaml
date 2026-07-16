@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - sample-nginx
   - sample-fastapi
+  - sample-api
